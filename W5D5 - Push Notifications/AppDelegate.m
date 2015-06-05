@@ -68,7 +68,7 @@
     if (currentUser){
         PFInstallation *currentInstallation = [PFInstallation currentInstallation];
         [currentInstallation setDeviceTokenFromData:deviceToken];
-        currentInstallation.channels = @[ @"premium", currentUser.objectId ];
+        currentInstallation.channels = @[ currentUser.objectId , @"premium"];
         [currentInstallation saveInBackground];
     }
     

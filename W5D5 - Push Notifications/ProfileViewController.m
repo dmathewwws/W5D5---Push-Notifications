@@ -35,6 +35,23 @@
     }];
     
 }
+- (IBAction)followUserPressed:(UIButton *)sender {
+    
+    PFObject *follow = [PFObject objectWithClassName:@"Activity"];
+    [follow setObject:[PFUser currentUser].objectId forKey:@"fromUser"];
+    [follow setObject:self.user.objectId forKey:@"toUser"];
+    [follow saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        
+        if (succeeded){
+            PFPush *sendToFollowee = [[PFPush alloc] init];
+            [sendToFollowee setChannel:self.user.objectId];
+            [sendToFollowee setMessage:[NSString stringWithFormat:@"You have been followed by %@", [PFUser currentUser].username]];
+            [sendToFollowee sendPushInBackground];
+        }
+        
+    }];
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

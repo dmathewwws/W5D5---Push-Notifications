@@ -32,6 +32,7 @@
 		AFF8226D1B20A08D0078039D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AFF8226C1B20A08D0078039D /* libz.dylib */; };
 		AFF8226F1B20A0980078039D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AFF8226E1B20A0980078039D /* libsqlite3.dylib */; };
 		AFF822721B20F3330078039D /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF822711B20F3330078039D /* ProfileViewController.m */; };
+		AFF822771B2162280078039D /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF822761B2162280078039D /* SearchViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,8 @@
 		AFF8226E1B20A0980078039D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		AFF822701B20F3330078039D /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		AFF822711B20F3330078039D /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		AFF822751B2162280078039D /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		AFF822761B2162280078039D /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +145,8 @@
 				AFF822301B20217F0078039D /* ViewController.m */,
 				AFF822701B20F3330078039D /* ProfileViewController.h */,
 				AFF822711B20F3330078039D /* ProfileViewController.m */,
+				AFF822751B2162280078039D /* SearchViewController.h */,
+				AFF822761B2162280078039D /* SearchViewController.m */,
 				AFF822321B20217F0078039D /* Main.storyboard */,
 				AFF822351B20217F0078039D /* Images.xcassets */,
 				AFF822371B20217F0078039D /* LaunchScreen.xib */,
@@ -303,6 +308,7 @@
 			files = (
 				AFF822311B20217F0078039D /* ViewController.m in Sources */,
 				AFF8222E1B20217F0078039D /* AppDelegate.m in Sources */,
+				AFF822771B2162280078039D /* SearchViewController.m in Sources */,
 				AFF822721B20F3330078039D /* ProfileViewController.m in Sources */,
 				AFF8222B1B20217F0078039D /* main.m in Sources */,
 			);
