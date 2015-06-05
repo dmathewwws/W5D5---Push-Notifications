@@ -117,7 +117,7 @@
         <!--Profile View Controller-->
         <scene sceneID="bip-hr-o6C">
             <objects>
-                <viewController id="EKn-A8-0KE" customClass="ProfileViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="EKn-A8-0KE" customClass="ProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4TI-M4-t0l"/>
                         <viewControllerLayoutGuide type="bottom" id="UD5-na-p85"/>

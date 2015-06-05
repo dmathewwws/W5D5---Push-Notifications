@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import "ProfileViewController.h"
 
 @interface AppDelegate ()
 
@@ -75,7 +76,30 @@
 }
 
 -(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+    
     [PFPush handlePush:userInfo];
+    
+    if (userInfo){
+        
+        NSString *userId = [userInfo objectForKey:@"u"];
+
+        PFObject *targetUser = [PFUser objectWithoutDataWithObjectId:userId];
+        
+        // Fetch photo object
+        [targetUser fetchIfNeededInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+            // Show photo view controller
+            if (!error) {
+                
+                UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                ProfileViewController *vc = [sb instantiateViewControllerWithIdentifier:@"ProfileViewController"];
+                vc.user = (PFUser*)object;
+                [self.window.rootViewController presentViewController:vc animated:YES completion:NULL];
+                
+            }
+        }];
+
+    }
+    
 }
 
 @end

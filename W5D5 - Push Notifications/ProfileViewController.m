@@ -43,9 +43,16 @@
     [follow saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         
         if (succeeded){
+            
+            NSDictionary *pushData = [NSDictionary dictionaryWithObjectsAndKeys:
+                                      [NSString stringWithFormat:@"You have been followed by %@", [PFUser currentUser].username], @"alert",
+                                      [PFUser currentUser].objectId ,@"u",
+                                      @"Increment" ,@"badge",
+                                      nil];
+            
             PFPush *sendToFollowee = [[PFPush alloc] init];
             [sendToFollowee setChannel:self.user.objectId];
-            [sendToFollowee setMessage:[NSString stringWithFormat:@"You have been followed by %@", [PFUser currentUser].username]];
+            [sendToFollowee setData:pushData];
             [sendToFollowee sendPushInBackground];
         }
         
