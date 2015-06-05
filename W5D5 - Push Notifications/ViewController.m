@@ -7,6 +7,9 @@
 //
 
 #import "ViewController.h"
+#import <Parse/Parse.h>
+#import "ProfileViewController.h"
+
 
 @interface ViewController ()
 
@@ -17,6 +20,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"goToProfile"]){
+        ProfileViewController *pVC = segue.destinationViewController;
+        pVC.user = [PFUser currentUser];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
